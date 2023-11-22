@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Skill Section</title>
+        <script src="/assets/js/js-fluid-meter.js"></script>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rancho&family=Water+Brush&display=swap');
+
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: poppins;
+            }
+
+
+            :root {
+                --Primary: #A760FF;
+                --second: #d568df;
+                --background: #2e2e2e;
+                --font-color: #555;
+                --light-gray-70: hsla(0, 0%, 84%, 0.7);
+                --light-gray: hsl(0, 0%, 84%);
+                --jet: hsl(0, 0%, 22%);
+                --onyx: hsl(240, 1%, 17%);
+                --eerie-black-1: hsl(240, 2%, 13%);
+                --eerie-black-2: hsl(240, 2%, 12%);
+                --smoky-black: hsl(0, 0%, 7%);
+                --white-1: hsl(0, 0%, 100%);
+                --white-2: hsl(0, 0%, 98%);
+                --orange-yellow-crayola: hsl(45, 100%, 72%);
+            }
+
+
+            .skill_section {
+                width: 100%;
+                height: auto;
+                padding: 100px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+
+            .heading {
+                font-size: 28px;
+                font-weight: 600;
+                position: relative;
+                color: var(--Primary);
+                margin-bottom: 50px;
+            }
+
+
+            .heading span {
+                color: var(--font-color);
+            }
+
+
+            .heading::after,
+            .heading::before {
+                position: absolute;
+                content: "";
+                width: 60px;
+                height: 4px;
+                background-color: var(--Primary);
+                border-radius: 60px;
+            }
+
+
+            .heading::after {
+                top: 50%;
+                left: -80px;
+                transform: translateY(-50%);
+            }
+
+
+            .heading::before {
+                top: 50%;
+                right: -80px;
+                transform: translateY(-50%);
+            }
+
+
+            .container {
+                width: 100%;
+                padding: 0 13%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 40px;
+            }
+
+
+            .card {
+                padding: 40px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                box-shadow: 7px 13px 25px rgba(0, 0, 0, 0.068);
+                border-radius: 6px;
+            }
+
+
+            .card p {
+                font-size: 21px;
+                color: var(--Primary);
+                margin-top: 20px;
+                font-weight: 600;
+            }
+
+
+            /* Media Query Started  */
+
+
+            @media only screen and (max-width:1220px) {
+                .container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+
+            @media only screen and (max-width:780px) {
+                .container {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+
+                .heading {
+                    font-size: 20px;
+                }
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="skill_section">
+            <p class="heading">Skill <span>Section</span></p>
+
+
+            <div class="container">
+                <div class="card">
+                    <div id="card-1"></div>
+                    <p>Python</p>
+                </div>
+                <div class="card">
+                    <div id="card-2"></div>
+                    <p>SQL</p>
+                </div>
+                <div class="card">
+                    <div id="card-3"></div>
+                    <p>R</p>
+                </div>
+                <div class="card">
+                    <div id="card-4"></div>
+                    <p>HTML</p>
+                </div>
+                <div class="card">
+                    <div id="card-5"></div>
+                    <p>CSS</p>
+                </div>
+                <div class="card">
+                    <div id="card-6"></div>
+                    <p>Java</p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="./js-fluid-meter.js"></script>
+        <!-- <script src="main.js"></script> -->
+        <script>
+            var fm1 = new FluidMeter();
+            var fm2 = new FluidMeter();
+            var fm3 = new FluidMeter();
+            var fm4 = new FluidMeter();
+            var fm5 = new FluidMeter();
+            var fm6 = new FluidMeter();
+
+            fm1.init( {
+                targetContainer: document.getElementById( "card-1" ),
+                fillPercentage: 80,
+                options: {
+                    fontSize: "30px",
+                    fontFamily: "poppins",
+                    fontFillStyle: "white",
+                    drawShadow: true,
+                    drawText: true,
+                    drawPercentageSign: true,
+                    drawBubbles: true,
+                    size: 300,
+                    borderWidth: 25,
+                    backgroundColor: "#e2e2e2",
+                    foregroundColor: "#fafafa",
+                    foregroundFluidLayer: {
+                        fillStyle: "#A760FF",
+                        angularSpeed: 100,
+                        maxAmplitude: 12,
+                        frequency: 30,
+                        horizontalSpeed: -150
+                    },
+                    backgroundFluidLayer: {
+                        fillStyle: "#d568df",
+                        angularSpeed: 100,
+                        maxAmplitude: 9,
+                        frequency: 30,
+                        horizontalSpeed: 150
+                    }
+                }
+            } );
+            fm2.init( {
+                targetContainer: document.getElementById( "card-2" ),
+                fillPercentage: 90,
+                options: {
+                    fontSize: "50px",
+                    fontFamily: "poppins",
+                    fontFillStyle: "white",
+                    drawShadow: true,
+                    drawText: true,
+                    drawPercentageSign: true,
+                    drawBubbles: true,
+                    size: 300,
+                    borderWidth: 25,
+                    backgroundColor: "#e2e2e2",
+                    foregroundColor: "#fafafa",
+                    foregroundFluidLayer: {
+                        fillStyle: "#A760FF",
+                        angularSpeed: 100,
+                        maxAmplitude: 12,
+                        frequency: 30,
+                        horizontalSpeed: -150
+                    },
+                    backgroundFluidLayer: {
+                        fillStyle: "#d568df",
+                        angularSpeed: 100,
+                        maxAmplitude: 9,
+                        frequency: 30,
+                        horizontalSpeed: 150
+                    }
+                }
+            } );
+            fm3.init( {
+                targetContainer: document.getElementById( "card-3" ),
+                fillPercentage: 55 ,
+                options: {
+                    fontSize: "50px",
+                    fontFamily: "poppins",
+                    fontFillStyle: "white",
+                    drawShadow: true,
+                    drawText: true,
+                    drawPercentageSign: true,
+                    drawBubbles: true,
+                    size: 300,
+                    borderWidth: 25,
+                    backgroundColor: "#e2e2e2",
+                    foregroundColor: "#fafafa",
+                    foregroundFluidLayer: {
+                        fillStyle: "#A760FF",
+                        angularSpeed: 100,
+                        maxAmplitude: 12,
+                        frequency: 30,
+                        horizontalSpeed: -150
+                    },
+                    backgroundFluidLayer: {
+                        fillStyle: "#d568df",
+                        angularSpeed: 100,
+                        maxAmplitude: 9,
+                        frequency: 30,
+                        horizontalSpeed: 150
+                    }
+                }
+            } );
+            fm4.init( {
+                targetContainer: document.getElementById( "card-4" ),
+                fillPercentage: 45,
+                options: {
+                    fontSize: "50px",
+                    fontFamily: "poppins",
+                    fontFillStyle: "white",
+                    drawShadow: true,
+                    drawText: true,
+                    drawPercentageSign: true,
+                    drawBubbles: true,
+                    size: 300,
+                    borderWidth: 25,
+                    backgroundColor: "#e2e2e2",
+                    foregroundColor: "#fafafa",
+                    foregroundFluidLayer: {
+                        fillStyle: "#A760FF",
+                        angularSpeed: 100,
+                        maxAmplitude: 12,
+                        frequency: 30,
+                        horizontalSpeed: -150
+                    },
+                    backgroundFluidLayer: {
+                        fillStyle: "#d568df",
+                        angularSpeed: 100,
+                        maxAmplitude: 9,
+                        frequency: 30,
+                        horizontalSpeed: 150
+                    }
+                }
+            } );
+            fm5.init( {
+                targetContainer: document.getElementById( "card-5" ),
+                fillPercentage: 30,
+                options: {
+                    fontSize: "50px",
+                    fontFamily: "poppins",
+                    fontFillStyle: "white",
+                    drawShadow: true,
+                    drawText: true,
+                    drawPercentageSign: true,
+                    drawBubbles: true,
+                    size: 300,
+                    borderWidth: 25,
+                    backgroundColor: "#e2e2e2",
+                    foregroundColor: "#fafafa",
+                    foregroundFluidLayer: {
+                        fillStyle: "#A760FF",
+                        angularSpeed: 100,
+                        maxAmplitude: 12,
+                        frequency: 30,
+                        horizontalSpeed: -150
+                    },
+                    backgroundFluidLayer: {
+                        fillStyle: "#d568df",
+                        angularSpeed: 100,
+                        maxAmplitude: 9,
+                        frequency: 30,
+                        horizontalSpeed: 150
+                    }
+                }
+            } );
+            fm6.init( {
+                targetContainer: document.getElementById( "card-6" ),
+                fillPercentage: 40,
+                options: {
+                    fontSize: "50px",
+                    fontFamily: "poppins",
+                    fontFillStyle: "white",
+                    drawShadow: true,
+                    drawText: true,
+                    drawPercentageSign: true,
+                    drawBubbles: true,
+                    size: 300,
+                    borderWidth: 25,
+                    backgroundColor: "#e2e2e2",
+                    foregroundColor: "#fafafa",
+                    foregroundFluidLayer: {
+                        fillStyle: "#A760FF",
+                        angularSpeed: 100,
+                        maxAmplitude: 12,
+                        frequency: 30,
+                        horizontalSpeed: -150
+                    },
+                    backgroundFluidLayer: {
+                        fillStyle: "#d568df",
+                        angularSpeed: 100,
+                        maxAmplitude: 9,
+                        frequency: 30,
+                        horizontalSpeed: 150
+                    }
+                }
+            } );
+            
+        </script>
+    </body>
+
